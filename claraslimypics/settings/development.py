@@ -17,6 +17,11 @@ INSTALLED_APPS += [
     'allauth',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+
+    'photo',
 ]
 
 SITE_ID = 1
+
+MEDIA_URL = '/media_cdn/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")

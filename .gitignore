@@ -3,3 +3,4 @@ __pycache__
 clara.sublime-workspace
 clara.sublime-project
 geckodriver.log
+media_cdn/*
