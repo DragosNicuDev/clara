@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container vertical-centre">
+{% if messages %}
+{% for message in messages %}
+<div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <h3 style="text-align: center; color: #fff;"><strong>Congratulations {{user.username}}!</strong><br>Now you can upload your slimy pic.</h3>
+        
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">  
+
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {% crispy form %}
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+$("#upload-image").fileinput({
+    maxFileCount: 1,
+    maxFileSize: 1024,
+    resizeImage: true,
+    resizeIfSizeMoreThan: 50,
+    resizeImageQuality: 0.50,
+}).on('filepreupload', function() {
+    $('#kv-success-box').html('');
+}).on('fileuploaded', function(event, data) {
+    $('#kv-success-box').append(data.response.link);
+    $('#kv-success-modal').modal('show');
+});
+</script>
+
+{% endblock content %}

@@ -18,8 +18,18 @@ INSTALLED_APPS += [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
 
+    'crispy_forms',
+
     'photo',
 ]
+
+# The tyoe of content that is allowed to be uploaded
+CONTENT_TYPES = ['image']
+
+# Limit uploads to 0.5MB
+MAX_UPLOAD_SIZE = 524288
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 SITE_ID = 1
 
