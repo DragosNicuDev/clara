@@ -7,6 +7,7 @@
 html,
 body {
     height: 100%;
+    font-family: 'Indie Flower', cursive;
 }
 
 .carousel,
@@ -21,6 +22,45 @@ body {
 
 .carousel-container {
     background-image: url('../img/black.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -41px;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.carousel-control .icon-prev {
+    width: 30px;
+    height: 30px;
+    margin-top: -41px;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.centre-colour {
+    text-align: center;
+    color: #fff;
+    font-weight:bold;
+    text-shadow: 2px 2px 8px #003300;
+}
+
+.left-colour {
+    text-align: left;
+    color: #fff;
+    font-weight:bold;
+    text-shadow: 2px 2px 8px #003300;
+}
+
+.green-colour {
+    color:#003300;
+    text-shadow: 2px 2px 8px #fff;
 }
 
 /* Background images are set within the HTML using inline CSS, not here */
@@ -37,7 +77,10 @@ body {
 
 .img-responsive {
 max-width: 90%;
-max-height: 100%;
+max-height: 90%;
+box-shadow: 0 0 25px 25px green;
+border-radius: 25px;
+border: 3px solid #004d00;
 }
 
 .vertical-centre {

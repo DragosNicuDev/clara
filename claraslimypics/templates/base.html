@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load account %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +13,19 @@
 
     <title>Clara's Slimy Pics</title>
 
-    <!-- Bootstrap Core CSS -->
-
+    <!-- Font -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static '/css/fileinput.min.css' %}" media="all" rel="stylesheet" type="text/css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="{% static 'js/plugins/canvas-to-blob.min.js' %}"></script>
-    <script src="{% static 'js/fileinput.min.js' %}"></script>
+    
     <!-- Custom CSS -->
     <link href="{% static 'css/full-slider.css' %}" rel="stylesheet">
+
+    <!-- jquery -->
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,23 +35,13 @@
     <![endif]-->
 </head>
 
-<body style="background-image: url({% static 'img/black.jpg' %});">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Clara's Slimy Pics</a>
-            </div>
-        </div>
-        <!-- /.container -->
-    </nav>
+<body style="background-image: url({% static 'img/black.jpg' %}); background-position: 50%; background-repeat: no-repeat; background-size: cover; margin: 0 auto;">
+<!--<input type="button" value="click to toggle fullscreen" onclick="toggleFullScreen(document.body)">-->
+{% block navigation %}
+{% endblock navigation %}
 
 {% block content %}
 {% endblock content %}
-
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 </body>
 
