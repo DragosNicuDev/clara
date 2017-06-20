@@ -1,2 +1,2 @@
 -r base.txt
-selenium==3.4.1
+selenium==3.4.3
